@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="roletaDesafios:jar">
+    <output-path>$PROJECT_DIR$/../../Minecraft servers/Paper 1.20.2/plugins</output-path>
+    <root id="archive" name="roletaDesafios.jar">
+      <element id="module-output" name="roletaDesafios" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

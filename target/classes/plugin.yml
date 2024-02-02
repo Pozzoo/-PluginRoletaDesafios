@@ -1,0 +1,20 @@
+name: roletaDesafios
+version: '1.0-SNAPSHOT'
+main: com.github.pozzoo.roletadesafios.RoletaDesafios
+api-version: '1.20'
+commands:
+  roletar:
+    description: "Roleta um desafio aleatório"
+    usage: "/roletar"
+    permission: roletadesafios.command.roletar
+    permission-message: "Você não tem permissão para usar este comando"
+  concluir:
+    description: "Conclui o desafio atual"
+    usage: "/concluir"
+    permission: roletadesafios.command.concluir
+    permission-message: "Você não tem permissão para usar este comando"
+  cancelar:
+    description: "Cancela o desafio atual"
+    usage: "/cancelar"
+    permission: roletadesafios.command.cancelar
+    permission-message: "Você não tem permissão para usar este comando"
