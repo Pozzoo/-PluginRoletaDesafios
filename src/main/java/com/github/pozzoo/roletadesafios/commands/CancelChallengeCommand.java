@@ -18,18 +18,17 @@ public class CancelChallengeCommand implements CommandExecutor {
     final Title title = Title.title(mainTitle, Component.text(""));
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (RoletaDesafios.getInstance().getChallengeManager().getCurrentChallengeIndex() == -1)
+        if (RoletaDesafios.getInstance().getChallengeManager().getCurrentChallengeIndex() == -1) {
             sender.sendMessage("Não há nenhum desafio ocorrendo atualmente");
-        else {
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                player.showTitle(title);
-                player.playSound(player, Sound.ENTITY_ITEM_BREAK, 1, 1);
-            }
-
-            RoletaDesafios.getInstance().getChallengeManager().clearCurrentChallenge();
+            return true;
         }
 
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            player.showTitle(title);
+            player.playSound(player, Sound.ENTITY_ITEM_BREAK, 1, 1);
+        }
 
+        RoletaDesafios.getInstance().getChallengeManager().clearCurrentChallenge();
         return true;
     }
 }

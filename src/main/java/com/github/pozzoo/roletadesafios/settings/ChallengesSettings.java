@@ -9,7 +9,6 @@ import java.io.IOException;
 
 public class ChallengesSettings {
 
-
     public void load() {
         File file = new File(RoletaDesafios.getInstance().getDataFolder(), "configDesafios.yml");
 

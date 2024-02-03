@@ -20,16 +20,16 @@ public class FinishChallengeCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (RoletaDesafios.getInstance().getChallengeManager().getCurrentChallengeIndex() == -1)
+        if (RoletaDesafios.getInstance().getChallengeManager().getCurrentChallengeIndex() == -1) {
             sender.sendMessage("Não há nenhum desafio ocorrendo atualmente");
-        else {
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                player.showTitle(title);
-                player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1, 100);
-            }
-            RoletaDesafios.getInstance().getChallengeManager().clearCurrentChallenge();
+            return true;
         }
 
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            player.showTitle(title);
+            player.playSound(player, Sound.ENTITY_PLAYER_LEVELUP, 1, 100);
+        }
+        RoletaDesafios.getInstance().getChallengeManager().clearCurrentChallenge();
 
         return true;
     }
